@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description', 'price', 'category_id','image'];
+    protected $fillable = ['name', 'description', 'price', 'category_id', 'image'];
 
     public function category()
     {

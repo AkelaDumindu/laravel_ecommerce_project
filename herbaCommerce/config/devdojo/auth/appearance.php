@@ -12,7 +12,7 @@ return [
         'height' => '32',
     ],
     'background' => [
-        'color' => '#ffffff',
+        'color' => '#17c814',
         'image' => '',
         'image_overlay_color' => '#000000',
         'image_overlay_opacity' => '0.5',
