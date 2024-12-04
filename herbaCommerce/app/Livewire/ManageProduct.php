@@ -4,10 +4,10 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class AdminLayout extends Component
+class ManageProduct extends Component
 {
     public function render()
     {
-        return view('livewire.admin-layout');
+        return view('livewire.manage-product');
     }
 }
