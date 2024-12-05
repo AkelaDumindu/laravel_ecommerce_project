@@ -30,7 +30,11 @@ class ProductTable extends Component
 
     public function delete($id)
     {
+        $product = Product::find($id);
 
+        $product->delete();
+
+        return $this->redirect('/products', navigate: true);
     }
     public function render()
     {
