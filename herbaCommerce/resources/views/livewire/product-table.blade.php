@@ -33,51 +33,37 @@
   
             <!-- Table -->
             <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-              <thead class="bg-gray-50 dark:bg-neutral-800">
+              <thead class="bg-gray-50 dark:bg-neutral-800  px-5">
                 <tr>
-                  <th scope="col" class="ps-6 lg:ps-3 xl:ps-0 pe-6 py-3 text-start">
-                    <div class="flex items-center gap-x-2">
-                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                        Product Name
-                      </span>
-                    </div>
-                  </th>
-  
-                  <th scope="col" class="px-6 py-3 text-start">
-                    <div class="flex items-center gap-x-2">
-                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                        Description
-                      </span>
-                    </div>
-                  </th>
-  
-                  <th scope="col" class="px-6 py-3 text-start">
-                    <div class="flex items-center gap-x-2">
-                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                        Price
-                      </span>
-                    </div>
-                  </th>
-  
-                  <th scope="col" class="px-6 py-3 text-start">
-                    <div class="flex items-center gap-x-2">
-                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                        Cretaed At
-                      </span>
-                    </div>
-                  </th>
-  
-                  <th scope="col" class="px-6 py-3 text-start">
-                    <div class="flex items-center gap-x-2">
-                      <span class="text-xs font-semibold uppercase tracking-wide text-gray-800 dark:text-neutral-200">
-                        Updated
-                      </span>
-                    </div>
-                  </th>
-  
+          
+                  @include('livewire.theaders.th',[
+                  'name' => 'name',
+                  'columnName' => 'Product Name',
+                  ])
+          
+                  @include('livewire.theaders.th',[
+                  'name' => 'description', //column name from db
+                  'columnName' => 'Description', //display name
+                  ])
+          
+                  @include('livewire.theaders.th',[
+                  'name' => 'price', //column name from db
+                  'columnName' => 'Price', //display name
+                  ])
+          
+                  @include('livewire.theaders.th',[
+                  'name' => 'category_id', //column name from db
+                  'columnName' => 'Category', //display name
+                  ])
+          
+                  @include('livewire.theaders.th',[
+                  'name' => 'created_at', //column name from db
+                  'columnName' => 'Created', //display name
+                  ])
+                  <th scope="col" class="px-6 py-3 text-end"></th>
                   <th scope="col" class="px-6 py-3 text-end"></th>
                 </tr>
-              </thead>
+                </thead>
   
               <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
                 @if (count($products) > 0)
