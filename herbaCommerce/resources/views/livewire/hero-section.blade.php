@@ -32,7 +32,7 @@
             class="block w-full rounded px-12 py-3 text-sm font-medium text-green-600 shadow hover:text-green-700 focus:outline-none focus:ring active:text-green-500 sm:w-auto"
             href="#"
           >
-            Learn More
+            Explore More
           </a>
         </div>
       </div>
