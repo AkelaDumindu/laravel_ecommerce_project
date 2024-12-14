@@ -3,6 +3,8 @@
 namespace App\Livewire;
 
 use App\Models\Product;
+use App\Models\ShoppingCart;
+use Auth;
 use Livewire\Component;
 
 class ProductDetails extends Component
@@ -12,6 +14,26 @@ class ProductDetails extends Component
     public function mount($product_id)
     {
         $this->product = Product::find($product_id);
+    }
+
+    //adding item to cart
+    public function addToCart($productId)
+    {
+        $cartItem = ShoppingCart::where('user_id', Auth::id())
+            ->where('product_id', $productId)
+            ->first();
+        if ($cartItem) {
+            $cartItem->quantity += 1; // increment its quantity
+            $cartItem->save();
+        } else {
+            ShoppingCart::create([
+                'user_id' => Auth::id(),
+                'product_id' => $productId,
+                'quantity' => 1,
+            ]);
+        }
+        //dispatch
+        $this->dispatch('cartUpdated');
     }
     public function render()
     {
