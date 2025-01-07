@@ -93,7 +93,7 @@ class ShoppingCartComponent extends Component
         $this->cartItems = $this->getCartItems();
         $this->calculateTotals();
 
-        return view('livewire.shopping-cart-component', [
+        return view('livewire.shopping-cart', [
             'cartItems' => $this->cartItems
         ])->title('E-commerce | Shopping cart');
     }
